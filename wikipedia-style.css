@@ -1,3 +1,4 @@
+/* Reset e configurações básicas */
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +9,18 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Lato, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
-    background-color: #f6f6f6;
     color: #222;
+    background-color: #ffffff;
 }
 
+/* Header */
 .header {
-    background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 100%);
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
     border-bottom: 1px solid #a2a9b1;
-    padding: 0.5em 0;
+    padding: 0.75em 1em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -24,321 +29,392 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: 0 1em;
+    justify-content: space-between;
 }
 
 .logo {
-    margin-right: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
 }
 
-.logo img {
+.logo-img {
+    width: 50px;
     height: 50px;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    font-size: 1.3em;
 }
 
 .search-container {
-    flex: 1;
-    max-width: 500px;
-    margin-right: 1.5em;
     display: flex;
     align-items: center;
+    gap: 0.5em;
 }
 
-.search-input {
-    width: 100%;
-    padding: 0.6em 0.8em;
-    border: 2px solid #a2a9b1;
-    border-radius: 2px;
-    font-size: 13px;
-    transition: border-color 0.2s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: #0645ad;
-    box-shadow: 0 0 0 1px #0645ad;
-}
-
-.search-button {
-    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
-    color: #222;
+.search-container input {
+    padding: 0.3em 0.5em;
     border: 1px solid #a2a9b1;
-    padding: 0.6em 1.2em;
-    margin-left: 0.5em;
     border-radius: 2px;
+    width: 300px;
+}
+
+.search-container button {
+    padding: 0.4em 1em;
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e8eaed 100%);
+    color: #202124;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 13px;
     transition: all 0.2s ease;
 }
 
-.search-button:hover {
-    background: linear-gradient(to bottom, #e9ecef 0%, #dee2e6 100%);
-    border-color: #868e96;
+.search-container button:hover {
+    background: linear-gradient(to bottom, #f1f3f4 0%, #e8eaed 100%);
+    border-color: #dadce0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.user-links {
+.header-links {
     display: flex;
-    gap: 1.2em;
-    font-size: 13px;
+    gap: 1em;
 }
 
-.user-links a {
+.header-links a {
     color: #0645ad;
     text-decoration: none;
-    padding: 0.3em 0.6em;
-    border-radius: 2px;
-    transition: background-color 0.2s ease;
+    font-size: 0.9em;
 }
 
-.user-links a:hover {
+.header-links a:hover {
     text-decoration: underline;
-    background-color: rgba(6, 69, 173, 0.1);
 }
 
+/* Container principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    gap: 1.5em;
-    padding: 1.5em;
-    background-color: #f6f6f6;
+    gap: 1em;
+    padding: 1em;
+    /* Garante que o conteúdo principal tenha espaço suficiente */
+    align-items: flex-start;
 }
 
+/* Sidebar */
 .sidebar {
-    width: 176px;
-    background-color: #ffffff;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    padding: 0.8em;
-    height: fit-content;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .sidebar h3 {
-    font-size: 12px;
+    font-size: 1em;
     font-weight: bold;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.5em;
     color: #222;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
 }
 
 .sidebar ul {
     list-style: none;
-    margin-bottom: 1.2em;
+    margin-bottom: 1.5em;
 }
 
 .sidebar li {
-    margin-bottom: 0.1em;
+    margin-bottom: 0.2em;
 }
 
 .sidebar a {
     color: #0645ad;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 0.9em;
     display: block;
-    padding: 0.2em 0.4em;
-    border-radius: 2px;
-    transition: background-color 0.2s ease;
+    padding: 0.2em 0;
 }
 
 .sidebar a:hover {
     text-decoration: underline;
-    background-color: rgba(6, 69, 173, 0.1);
 }
 
+/* Conteúdo principal */
 .main-content {
     flex: 1;
-    background-color: #ffffff;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    padding: 1.5em;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    min-width: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* Força o conteúdo a ocupar todo o espaço disponível */
+    width: 100%;
 }
 
 .page-title {
-    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-    font-size: 2.4em;
+    font-size: 2.2em;
     font-weight: normal;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     border-bottom: 3px solid #a2a9b1;
     padding-bottom: 0.2em;
-    color: #000;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+    margin-right: 0;
 }
 
+/* Força todos os parágrafos a ocuparem o espaço disponível */
+.main-content p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    text-align: justify;
+    margin-left: 0;
+    margin-right: 0;
+    /* Garante que o texto flua ao redor da infobox */
+    line-height: 1.6;
+}
+
+/* Força o primeiro parágrafo a começar imediatamente após o título */
+.main-content > p:first-of-type {
+    margin-top: 0;
+}
+
+/* Infobox */
 .infobox {
     float: right;
     width: 300px;
-    margin: 0 0 1em 1.5em;
+    margin: 0 0 1em 1em;
     border: 1px solid #a2a9b1;
     background-color: #f8f9fa;
-    font-size: 13px;
-    border-radius: 2px;
+    font-size: 0.9em;
+    clear: none;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    /* Garante que a infobox não interfira no fluxo do texto */
+    shape-outside: margin-box;
 }
 
 .infobox-title {
     background: linear-gradient(to bottom, #ccccff 0%, #b3b3ff 100%);
-    padding: 0.6em;
-    text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    text-align: center;
+    padding: 0.6em;
+    font-size: 1.1em;
     border-bottom: 1px solid #a2a9b1;
-    color: #000;
 }
 
 .infobox-image {
     text-align: center;
-    padding: 1.2em;
-    background-color: #fff;
+    padding: 0.75em;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaecf0;
 }
 
 .infobox-image img {
     max-width: 100%;
     height: auto;
     border: 1px solid #a2a9b1;
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .infobox-content {
-    padding: 0.8em;
+    padding: 0;
 }
 
 .infobox-row {
     display: flex;
-    margin-bottom: 0.4em;
-    border-bottom: 1px solid #eaecf0;
-    padding-bottom: 0.3em;
+    border-bottom: 1px solid #a2a9b1;
 }
 
 .infobox-row:last-child {
     border-bottom: none;
-    margin-bottom: 0;
 }
 
 .infobox-label {
+    background-color: #eaecf0;
     font-weight: bold;
-    width: 100px;
-    flex-shrink: 0;
-    color: #222;
+    padding: 0.3em 0.5em;
+    width: 40%;
+    border-right: 1px solid #a2a9b1;
 }
 
 .infobox-value {
-    flex: 1;
-    color: #222;
+    padding: 0.3em 0.5em;
+    width: 60%;
 }
 
-.infobox-value a {
-    color: #0645ad;
-    text-decoration: none;
+/* Seções */
+section {
+    margin-bottom: 2em;
+    /* Remove clear: both que pode estar interferindo */
 }
 
-.infobox-value a:hover {
-    text-decoration: underline;
-}
-
-.content p {
-    margin-bottom: 1em;
-    text-align: justify;
-    line-height: 1.65;
-}
-
-.content h2 {
-    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-    font-size: 1.8em;
+h2 {
+    font-size: 1.5em;
     font-weight: normal;
-    margin: 1.8em 0 0.6em 0;
+    margin: 1.5em 0 0.5em 0;
     border-bottom: 1px solid #a2a9b1;
     padding-bottom: 0.2em;
-    color: #000;
+    font-family: 'Linux Libertine', Georgia, Times, serif;
+    /* Remove clear que pode estar interferindo */
 }
 
-.content h3 {
-    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-    font-size: 1.4em;
-    font-weight: normal;
-    margin: 1.4em 0 0.6em 0;
-    color: #000;
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1em 0 0.5em 0;
 }
 
-.content a {
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+    /* Remove margens que podem estar interferindo */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Links */
+a {
     color: #0645ad;
     text-decoration: none;
 }
 
-.content a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-.content a:visited {
+a:visited {
     color: #0b0080;
 }
 
-.content ul {
-    margin: 0.5em 0 1em 2em;
-}
-
-.content ol {
-    margin: 0.5em 0 1em 2em;
-}
-
-.content li {
-    margin-bottom: 0.4em;
-    line-height: 1.6;
-}
-
+/* Referências */
 .reference {
-    font-size: 11px;
+    font-size: 0.8em;
     vertical-align: super;
-    color: #0645ad;
 }
 
 .reference a {
     color: #0645ad;
-    text-decoration: none;
 }
 
-.reference a:hover {
-    text-decoration: underline;
+/* Listas */
+ul, ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
 }
 
-.content strong {
-    font-weight: bold;
-}
-
-.content em {
-    font-style: italic;
-}
-
-/* Melhorias na tipografia */
-.content p:first-of-type {
-    font-size: 14.5px;
-    line-height: 1.7;
-}
-
-/* Estilos para listas de referências */
-.content ol li {
-    font-size: 13px;
-    line-height: 1.5;
+li {
     margin-bottom: 0.3em;
 }
 
-/* Hover effects */
-.infobox:hover {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+/* Estilos para a seção de certificados */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+    margin: 1.5em 0;
+    clear: both;
 }
 
-.main-content:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+.certificate-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    border: 1px solid #a2a9b1;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
 }
 
-/* Responsividade aprimorada */
+.certificate-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.certificate-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 4px;
+    border: 1px solid #e1e5e9;
+    flex-shrink: 0;
+}
+
+.certificate-info {
+    flex: 1;
+}
+
+.certificate-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    color: #0645ad;
+}
+
+.certificate-info p {
+    margin-bottom: 0.3em;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.certificate-info p strong {
+    color: #222;
+}
+
+.certificate-status {
+    display: inline-block;
+    background-color: #fef9e7;
+    color: #8a6d3b;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 1px solid #faebcc;
+}
+
+.categories-section {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-radius: 4px;
+    clear: both;
+}
+
+.categories-section p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.categories-section a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+.categories-section a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        padding: 1em;
-        gap: 1em;
+        padding: 0.5em;
     }
     
     .sidebar {
@@ -346,50 +422,58 @@ body {
         order: 2;
     }
     
+    .main-content {
+        order: 1;
+    }
+    
     .infobox {
         float: none;
         width: 100%;
-        margin: 0 0 1.5em 0;
+        margin: 1em 0;
     }
-
-    .page-title {
-        font-size: 2em;
-    }
-
-    .content h2 {
-        font-size: 1.5em;
-    }
-
-    .content h3 {
-        font-size: 1.2em;
-    }
-
-    .header-content {
-        flex-direction: column;
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
         gap: 1em;
     }
-
-    .search-container {
-        max-width: 100%;
-        margin-right: 0;
+    
+    .certificate-item {
+        flex-direction: column;
+        text-align: center;
     }
-
-    .user-links {
-        justify-content: center;
+    
+    .certificate-logo {
+        align-self: center;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .search-container input {
+        width: 200px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 0.5em;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0.5em;
-    }
-
-    .main-content {
-        padding: 1em;
-    }
-
     .page-title {
         font-size: 1.8em;
+    }
+    
+    .certificate-item {
+        padding: 0.8em;
+    }
+    
+    .certificate-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .search-container input {
+        width: 150px;
     }
 }
 
