@@ -1,6 +1,6 @@
 # 📚 Wikipedia CV – Desafio Santander Front-end
 
-![Banner animado](../assets/Criando%20via%20Manus.gif)
+![Banner animado](assets/Criando%20via%20Manus.gif)
 
 Projeto desenvolvido para o desafio de front-end do Santander em parceria com a DIO. O objetivo é criar um currículo interativo inspirado no visual da Wikipedia, utilizando apenas tecnologias web modernas.
 
