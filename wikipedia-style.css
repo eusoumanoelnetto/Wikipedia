@@ -30,71 +30,93 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-}
-
-.logo-img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-}
-
-.logo-text {
-    font-family: 'Linux Libertine', Georgia, Times, serif;
-    font-size: 1.3em;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.search-container input {
-    padding: 0.3em 0.5em;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    width: 300px;
-}
-
-.search-container button {
-    padding: 0.4em 1em;
-    background: linear-gradient(to bottom, #f8f9fa 0%, #e8eaed 100%);
-    color: #202124;
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: all 0.2s ease;
-}
-
-.search-container button:hover {
-    background: linear-gradient(to bottom, #f1f3f4 0%, #e8eaed 100%);
-    border-color: #dadce0;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-
-.header-links {
-    display: flex;
     gap: 1em;
 }
 
-.header-links a {
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.mw-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+    color: #000;
+}
+
+.mw-logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 0.5em;
+}
+
+.search-icon {
+    margin-right: 0.5em;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    width: 100%;
+    background: transparent;
+}
+
+.search-button {
+    background-color: #f8f9fa;
+    border: none;
+    border-left: 1px solid #a2a9b1;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #e9ecef;
+}
+
+.user-links {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.user-links a {
     color: #0645ad;
     text-decoration: none;
     font-size: 0.9em;
 }
 
-.header-links a:hover {
+.user-links a:hover {
     text-decoration: underline;
 }
 

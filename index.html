@@ -9,13 +9,30 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="#" class="logo">
-                <img src="../assets/wikipedia-logo.png" alt="Wikipedia" class="logo-img">
-                <span class="logo-text">Wikipédia</span>
-            </a>
+            <div class="left-section">
+                <button class="menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <a href="/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" class="mw-logo">
+                    <img class="mw-logo-icon" src="assets/wikipedia-logo.png" alt="" aria-hidden="true" height="50" width="50">
+                    <span class="mw-logo-container skin-invert">
+                        <img class="mw-logo-wordmark" alt="Wikipédia" src="assets/wikipedia-wordmark-fr.svg" style="width: 7.4375em; height: 1.125em;">
+                        <img class="mw-logo-tagline" alt="A enciclopédia livre" src="assets/wikipedia-tagline-pt.svg" width="120" height="13" style="width: 7.5em; height: 0.8125em;">
+                    </span>
+                </a>
+            </div>
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Pesquisar na Wikipédia" id="search-input">
-                <button class="search-button" id="search-button">Pesquisar</button>
+                <form action="/w/index.php" class="search-form">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M15.55 14.14l-3.54-3.54a6.01 6.01 0 10-1.41 1.41l3.54 3.54a1 1 0 001.41-1.41zM4 8a4 4 0 118 0 4 4 0 01-8 0z" fill="#54595d"></path></svg>
+                        <input type="search" name="search" placeholder="Pesquisar na Wikipédia" title="Pesquisar na Wikipédia [f]" accesskey="f" class="search-input">
+                    </div>
+                    <input type="submit" name="go" value="Pesquisar" class="search-button">
+                </form>
             </div>
             <div class="user-links">
                 <a href="#">Donativos</a>
